@@ -4,7 +4,7 @@
     <title>Capacitación paquete calidad</title>
     <meta charset="utf-8" />
     <meta name="author" content="" />
-    <meta name="date" content="2021-04-20" />
+    <meta name="date" content="2021-05-05" />
     <script src="calidad_files/kePrint-0.0.1/kePrint.js"></script>
     <link href="calidad_files/lightable-0.0.1/lightable.css" rel="stylesheet" />
     <link rel="stylesheet" href="xaringan-themer.css" type="text/css" />
@@ -20,14 +20,53 @@ class: center, middle
 
 &lt;img src="imagenes/logo_portada2.png" width="200" /&gt;
 
-## Capacitación en uso paquete calidad
+## Presentación paquete calidad
 
 ## Proyecto Estratégico Servicios Compartidos para la Producción Estadística
 
-### Abril 2021
+## Subdepartamento de Marcos y Muestras
+
+### Mayo 2021
 
 
 
+
+
+---
+background-image: url("imagenes/fondo2.PNG")
+background-size: contain;
+background-position: 100% 0%
+
+# Contenidos de la presentación
+
+- Contexto 
+
+--
+
+- Estándar de calidad en encuestas de hogares
+
+--
+
+- Paquete de R para implementar el Estándar
+
+---
+
+background-image: url("imagenes/fondo2.PNG")
+background-size: contain;
+background-position: 100% 0%
+
+# Contexto
+
+- Las encuestas por muestreo como fuente de información
+
+
+- Principio de representatividad de las encuestas por muestreo
+
+
+- Criterios previos para evaluar la calidad de las estimaciones
+
+
+- Disposición de las bases de datos asociadas a las encuestas por muestreo
 
 
 ---
@@ -36,68 +75,60 @@ background-image: url("imagenes/fondo2.PNG")
 background-size: contain;
 background-position: 100% 0%
 
-# Estructura del taller
+# Calidad de las estimaciones
 
 
-- Breve repaso del estándar de calidad para las estimaciones en encuestas de hogares del INE
+- Calidad como concepto multidimensional
 
---
+- Criterio de Acuracidad, Confiabilidad o Precisión
 
-- Mirada general del paquete `survey`
+- Fuentes de error de las encuestas: Errores de muestreo y Errores ajenos al muestreo
 
---
+- Medida predilecta para medir la calidad: El error cuadrático medio
 
-- Presentación y ejercicios prácticos con el paquete `calidad`, desarrollado por el PE SSCC. 
+$$ECM(\hat{\theta}) = E[\hat{\theta} - \theta]^2 = \sigma^2( \hat{\theta}) + (E[\hat{\theta}] - \theta)^2 $$
 
+`\(\sigma^2( \hat{\theta}) : \text{Varianza de la estimación}\)`
 
-
---
-
-**Objetivo del taller**
-
-- Aplicar el estándar de calidad, utilizando el paquete desarrollado por el PE Servicios Compartidos, de forma tal que todas las Direcciones Regionales utilicen y apliquen un mismo método para la aplicación del Estándar de Calidad.
-
---
-
-### Asumiremos un conocimiento básico de R
+`\(E[\hat{\theta}] - \theta: \text{sesgo}\)`
 
 ---
-
 background-image: url("imagenes/fondo2.PNG")
 background-size: contain;
 background-position: 100% 0%
 
-# Estándar de calidad INE
-
-Desde 2020, el INE cuenta con un [estándar](https://www.ine.cl/docs/default-source/documentos-de-trabajo/20200318-lineamientos-medidas-de-precisi%C3%B3n.pdf?sfvrsn=f1ab2dbe_4) para evaluar la calidad de estimaciones provenientes de encuestas de hogares
-
+# Calidad de las estimaciones
 
 .center[
-&lt;img src="imagenes/estandar.png" width="600" /&gt;
+&lt;img src="imagenes/sesgo.png" width="800" /&gt;
+
 ]
 
---
-
-Nos permite determinar si una estimación es **fiable, poco fiable o no fiable** 
-
---
-
-Nos orienta respecto a si un tabulado debe ser publicado o no
-
-
 ---
+
 background-image: url("imagenes/fondo2.PNG")
 background-size: contain;
 background-position: 100% 0%
 
-# Aspectos generales del estándar
-
-Existe un flujo, que nos permite etiquetar **automáticamente** cada estimación 
-
---
+# Actividades desarrolladas
 
 .center[
-&lt;img src="imagenes/flujo.png" width="650" /&gt;
+&lt;img src="imagenes/flecha.png" width="800" /&gt;
+
+]
+
+---
+background-image: url("imagenes/fondo2.PNG")
+background-size: contain;
+background-position: 100% 0%
+
+# Dicotomía de las proporciones
+
+&lt;br&gt;
+&lt;br&gt;
+
+.center[
+&lt;img src="imagenes/se_cv.png" width="900" /&gt;
 ]
 
 ---
@@ -106,28 +137,14 @@ background-image: url("imagenes/fondo2.PNG")
 background-size: contain;
 background-position: 100% 0%
 
-# Aspectos generales del estándar
+# Funciones evaluadas para el SE
 
-## El flujo establece caminos diferenciados
+## Aquí va una fórmula
 
---
 
-### Estimaciones de proporción (o razón) entre **0 y 1**
+&lt;img src="imagenes/tres_graficos.png" width="800" /&gt;
 
-- Tamaño muestral
-- Grados de libertad
-- .red[Error estándar] 
 
---
-
-### Resto de estimaciones
-
-- Tamaño muestral
-- Grados de libertad
-- .red[Coeficiente de variación] 
- 
-
-### En un caso usamos el SE y en otro el CV
 
 ---
 
@@ -334,7 +351,7 @@ svymean(x = ~desocupado, subset(dc_rep, fdt == 1))
 
 ```
 ##               mean     SE
-## desocupado 0.10227 0.0028
+## desocupado 0.10227 0.0034
 ```
 
 
@@ -388,7 +405,7 @@ Se requiere el paquete `devtools`
 
 ```r
 library(devtools)
-install_github("Klauslehmann/calidad")
+install_github("inesscc/calidad")
 ```
 
 --
@@ -630,7 +647,7 @@ create_prop(var = ocupado_hombre, denominador = ocupado_mujer,
 
 ```
 ##                objetivo         se         cv   gl     n
-## ocupado_hombre 1.457028 0.02161891 0.01483768 4567 32209
+## ocupado_hombre 1.457028 0.02161891 0.01483768 4529 29260
 ```
 --
 
@@ -645,41 +662,10 @@ create_prop(var = ocupado_hombre, denominador = ocupado_mujer,
 
 ```
 ##   metro objetivo         se         cv   gl     n
-## 1     0 1.515355 0.02213437 0.01460672 3660 26229
-## 2     1 1.389366 0.03825463 0.02753388  907  5980
+## 1     0 1.515355 0.02213437 0.01460672 3633 23959
+## 2     1 1.389366 0.03825463 0.02753388  896  5301
 ```
 
----
-
-background-image: url("imagenes/fondo2.PNG")
-background-size: contain;
-background-position: 100% 0%
-
-# Ejercicio ~~no tan~~ express (10 minutos)
-
-Calculemos el número total de casados sobre el total de convivientes. Para ello, deben utilizar la variable `est_conyugal` y seguir los siguientes pasos:
-
-- Crear variables dummy para casados (est_conyugal == 1) y para conviviente (est_conyugal == 2)
-- Declarar el diseño complejo con las nuevas columnas creadas
-- Utilizar la función `create_prop` 
-
---
-
-
-
-```r
-ene &lt;- ene %&gt;% 
-  mutate(casado = if_else(est_conyugal == 1, 1, 0),
-         conviviente  = if_else(est_conyugal == 2, 1, 0))
-
-dc &lt;- svydesign(ids = ~conglomerado, strata = ~estrato, weights = ~fact_cal,  data = ene )
-create_prop(var = casado, denominador = conviviente,  disenio = dc )
-```
-
-```
-##        objetivo         se         cv   gl     n
-## casado 1.923733 0.05178126 0.02691707 4719 77640
-```
 
 
 ---
@@ -759,7 +745,7 @@ create_tot(var = est_conyugal, dominios = sexo, subpop = fdt, disenio = dc)
 ```
 
 ```
-## Error in create_tot(var = est_conyugal, dominios = sexo, subpop = fdt, : ¡Debes usar una variable dummy cuando desagregas!
+## Error in create_tot(var = est_conyugal, dominios = sexo, subpop = fdt, : Debes usar una variable dummy cuando desagregas!
 ```
 
 
@@ -957,6 +943,15 @@ Veamos qué pasa con las proporciones que son mayores a 1
 
 
 ```r
+ene &lt;- ene %&gt;% 
+  mutate(casado = if_else(est_conyugal == 1, 1, 0),
+         conviviente  = if_else(est_conyugal == 2, 1, 0))
+dc &lt;- svydesign(ids = ~conglomerado, strata = ~estrato, weights = ~fact_cal,  data = ene )
+```
+
+
+
+```r
 est &lt;- create_prop(var = casado, 
                    denominador = conviviente,
                    dominios = metro, 
@@ -966,8 +961,8 @@ evaluate_prop(est)
 
 ```
 ##   metro objetivo         se         cv   gl     n       eval_n       eval_gl
-## 1     0 2.132569 0.05416014 0.02539666 3779 64760 n suficiente gl suficiente
-## 2     1 1.674211 0.08740591 0.05220721  940 12880 n suficiente gl suficiente
+## 1     0 2.132569 0.05416014 0.02539666 3481 25747 n suficiente gl suficiente
+## 2     1 1.674211 0.08740591 0.05220721  821  5013 n suficiente gl suficiente
 ##   prop_est tipo_eval cuadratica eval_se  eval_cv calidad
 ## 1   &gt;= a 1   Eval CV         NA    &lt;NA&gt; cv &lt;= 15  fiable
 ## 2   &gt;= a 1   Eval CV         NA    &lt;NA&gt; cv &lt;= 15  fiable
@@ -1000,13 +995,20 @@ evaluate_tot(est, publicar = T) %&gt;%
 ```
 
 ```
-##   region sexo    total   calidad       publicacion        aprueba
-## 1      1    1  9248.56 no fiable publicar tabulado pasa el 59.38%
-## 2      2    1 21320.02    fiable publicar tabulado pasa el 59.38%
-## 3      3    1 10659.94    fiable publicar tabulado pasa el 59.38%
-## 4      4    1 22749.72    fiable publicar tabulado pasa el 59.38%
-## 5      5    1 52432.50    fiable publicar tabulado pasa el 59.38%
-## 6      6    1 28877.61    fiable publicar tabulado pasa el 59.38%
+##   region sexo    total   calidad       publicacion
+## 1      1    1  9248.56 no fiable publicar tabulado
+## 2      2    1 21320.02    fiable publicar tabulado
+## 3      3    1 10659.94    fiable publicar tabulado
+## 4      4    1 22749.72    fiable publicar tabulado
+## 5      5    1 52432.50    fiable publicar tabulado
+## 6      6    1 28877.61    fiable publicar tabulado
+##                          aprueba
+## 1 59.38% de estimaciones fiables
+## 2 59.38% de estimaciones fiables
+## 3 59.38% de estimaciones fiables
+## 4 59.38% de estimaciones fiables
+## 5 59.38% de estimaciones fiables
+## 6 59.38% de estimaciones fiables
 ```
 
 --
@@ -1175,7 +1177,7 @@ Estos proyectos se nutren del aporte de la comunidad
 
 --
 
-En este [repositorio de github](https://github.com/Klauslehmann/calidad) pueden proponer nuevos desarrollos
+En este [repositorio de github](https://github.com/inesscc/calidad) pueden proponer nuevos desarrollos
 
 --
 
@@ -1187,66 +1189,11 @@ Pueden generar *issues* o nuevas ramas de desarrollo
 
 --
 
-Si en tu región tienes un desarrollo o mejora, estaremos felices de revisarlo e incorporarlo al paquete  
+Si tienen propuestas de mejora o nuevos desarrollos, estaremos felices de revisarlo e incorporarlo al paquete  
 
 .center[
 ### 😄😄😄😄😄
 ]
-
-
-
-
-
----
-background-image: url("imagenes/fondo2.PNG")
-background-size: contain;
-background-position: 100% 0%
-
-# Un poco de práctica
-
-- Calcula el total de desocupados según tramo etario  
-- Evalúa si el tabulado cumple con el estándar
-- Genera una visualización de la tabla evaluada
-
---
-
-
-```r
-tramo_ocup &lt;- create_tot(desocupado, dominios = tramo_edad, subpop = fdt, disenio = dc)
-eval_tramo &lt;- evaluate_tot(tramo_ocup, publicar = T)
-tabla_html(eval_tramo)
-```
-
---
-- Calcula el total de desocupados según tramo etario y sexo  
-- Evalúa si el tabulado cumple con el estándar
-- Genera una visualización de la tabla evaluada
-
-
-```r
-tramo_sexo_ocup &lt;- create_tot(desocupado, dominios = tramo_edad+sexo, subpop = fdt, disenio = dc)
-eval_tramo_sexo &lt;- evaluate_tot(tramo_sexo_ocup, publicar = T)
-tabla_html(eval_tramo_sexo)
-```
-
----
-
-background-image: url("imagenes/fondo2.PNG")
-background-size: contain;
-background-position: 100% 0%
-
-# Un poco de práctica
-
-- Calcula el total de desocupados según tramo etario y region  
-- Evalúa si el tabulado cumple con el estándar
-- Genera una visualización de la tabla evaluada
-
-
-```r
-tramo_region_ocup &lt;- create_tot(desocupado, dominios = tramo_edad+region, subpop = fdt, disenio = dc)
-eval_region_tramo &lt;- evaluate_tot(tramo_region_ocup, publicar = T)
-tabla_html(eval_region_tramo)
-```
 
 
 
@@ -1263,7 +1210,7 @@ class: center, middle
 
 ## Proyecto Estratégico Servicios Compartidos para la Producción Estadística
 
-### Abril 2021
+### Mayo 2021
     </textarea>
 <style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
 <script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>

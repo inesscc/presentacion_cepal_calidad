@@ -40,6 +40,120 @@ library(xaringanthemer)
 ```
 
 ---
+background-image: url("imagenes/fondo2.PNG")
+background-size: contain;
+background-position: 100% 0%
+
+# Contenidos de la presentación
+
+- Contexto 
+
+--
+
+- Estándar de calidad en encuestas de hogares
+
+--
+
+- Paquete de R para implementar el Estándar
+
+---
+
+background-image: url("imagenes/fondo2.PNG")
+background-size: contain;
+background-position: 100% 0%
+
+# Contexto
+
+- Las encuestas por muestreo como fuente de información
+
+
+- Principio de representatividad de las encuestas por muestreo
+
+
+- Criterios previos para evaluar la calidad de las estimaciones
+
+
+- Disposición de las bases de datos asociadas a las encuestas por muestreo
+
+
+---
+
+background-image: url("imagenes/fondo2.PNG")
+background-size: contain;
+background-position: 100% 0%
+
+# Calidad de las estimaciones
+
+
+- Calidad como concepto multidimensional
+
+- Criterio de Acuracidad, Confiabilidad o Precisión
+
+- Fuentes de error de las encuestas: Errores de muestreo y Errores ajenos al muestreo
+
+- Medida predilecta para medir la calidad: El error cuadrático medio
+
+$$ECM(\hat{\theta}) = E[\hat{\theta} - \theta]^2 = \sigma^2( \hat{\theta}) + (E[\hat{\theta}] - \theta)^2 $$
+
+$\sigma^2( \hat{\theta}) : \text{Varianza de la estimación}$
+
+$E[\hat{\theta}] - \theta: \text{sesgo}$
+
+---
+background-image: url("imagenes/fondo2.PNG")
+background-size: contain;
+background-position: 100% 0%
+
+# Calidad de las estimaciones
+
+.center[
+<img src="imagenes/sesgo.png" width="800" />
+
+]
+
+---
+
+background-image: url("imagenes/fondo2.PNG")
+background-size: contain;
+background-position: 100% 0%
+
+# Actividades desarrolladas
+
+.center[
+<img src="imagenes/flecha.png" width="800" />
+
+]
+
+---
+background-image: url("imagenes/fondo2.PNG")
+background-size: contain;
+background-position: 100% 0%
+
+# Dicotomía de las proporciones
+
+<br>
+<br>
+
+.center[
+<img src="imagenes/se_cv.png" width="900" />
+]
+
+---
+
+background-image: url("imagenes/fondo2.PNG")
+background-size: contain;
+background-position: 100% 0%
+
+# Funciones evaluadas para el SE
+
+## Aquí va una fórmula
+
+
+<img src="imagenes/tres_graficos.png" width="800" />
+
+
+
+---
 
 background-image: url("imagenes/fondo2.PNG")
 background-size: contain;
