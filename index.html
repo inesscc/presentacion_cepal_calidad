@@ -4,10 +4,11 @@
     <title>Capacitación paquete calidad</title>
     <meta charset="utf-8" />
     <meta name="author" content="" />
-    <meta name="date" content="2021-05-05" />
+    <meta name="date" content="2021-05-06" />
     <script src="calidad_files/kePrint-0.0.1/kePrint.js"></script>
     <link href="calidad_files/lightable-0.0.1/lightable.css" rel="stylesheet" />
     <link rel="stylesheet" href="xaringan-themer.css" type="text/css" />
+    <link rel="stylesheet" href="https:\\cdnjs.cloudflare.com\ajax\libs\animate.css\3.7.0\animate.min.css" type="text/css" />
   </head>
   <body>
     <textarea id="source">
@@ -33,6 +34,7 @@ class: center, middle
 
 
 ---
+
 background-image: url("imagenes/fondo2.PNG")
 background-size: contain;
 background-position: 100% 0%
@@ -139,10 +141,50 @@ background-position: 100% 0%
 
 # Funciones evaluadas para el SE
 
-## Aquí va una fórmula
+
+### Enfoque de la recta y del CV logarítmico
 
 
-&lt;img src="imagenes/tres_graficos.png" width="800" /&gt;
+
+.center[&lt;img src="imagenes/formula.png" width="500" /&gt;]
+
+
+&lt;img src="imagenes/tres_graficos.png" width="1000" /&gt;
+
+.footnote[
+Notas:
+
+[1] La recta que pasa por los puntos: (0,01 ; 0,005) y (0,20; 0,03) quedando como CV los valores 0,50 y 0,15, respectivamente.
+
+[2]  El valor 0,1862 en la última función del máximo 𝑒𝑒 tolerable, constituye el valor que toma esta función evaluada en 𝑝=0,50, en el contexto de un muestreo aleatorio simple y considerando un tamaño muestral de 𝑛=60 unidades. Similar ejercicio se encuentra en Hornik, et al. (2002) y Walker (2003) utilizando 𝑛=41  y 𝑛=68, respectivamente.
+]
+
+
+---
+class: animated, fadeIn
+
+background-image: url("imagenes/fondo2.PNG")
+background-size: contain;
+background-position: 100% 0%
+
+# Funciones evaluadas para el SE
+
+### Enfoque de la recta y del CV logarítmico
+
+.center[&lt;img src="imagenes/formula.png" width="500" /&gt;]
+
+
+&lt;img src="imagenes/tres_graficos2.png" width="1000" /&gt;
+
+.footnote[
+Notas:
+
+[1] La recta que pasa por los puntos: (0,01 ; 0,005) y (0,20; 0,03) quedando como CV los valores 0,50 y 0,15, respectivamente.
+
+[2]  El valor 0,1862 en la última función del máximo 𝑒𝑒 tolerable, constituye el valor que toma esta función evaluada en 𝑝=0,50, en el contexto de un muestreo aleatorio simple y considerando un tamaño muestral de 𝑛=60 unidades. Similar ejercicio se encuentra en Hornik, et al. (2002) y Walker (2003) utilizando 𝑛=41  y 𝑛=68, respectivamente.
+]
+
+---
 
 
 
@@ -240,7 +282,9 @@ ene &lt;- ene %&gt;%
   mutate(fdt = if_else(cae_especifico &gt;= 1 &amp; cae_especifico &lt;= 9, 1, 0), # fuerza de trabajo
          ocupado = if_else(cae_especifico &gt;= 1 &amp; cae_especifico &lt;= 7, 1, 0), # persona ocupada
          desocupado = if_else(cae_especifico &gt;= 8 &amp; cae_especifico &lt;= 9, 1, 0), # persona desocupada
-         metro = if_else(region == 13, 1, 0)) 
+         metro = if_else(region == 13, 1, 0),
+         num = if_else(row_number() &lt;= 1, 1, 0),
+         denom = 1) 
 ```
 
 
@@ -351,7 +395,7 @@ svymean(x = ~desocupado, subset(dc_rep, fdt == 1))
 
 ```
 ##               mean     SE
-## desocupado 0.10227 0.0034
+## desocupado 0.10227 0.0035
 ```
 
 

@@ -88,9 +88,6 @@ h2, h3 {
 }
 
 
-
-
-
 .remark-slide-content {
   background-color: var(--background-color);
   font-size: 1rem;
@@ -130,9 +127,9 @@ a, a > code {
 }
 .footnote {
   position: absolute;
-  bottom: 60px;
+  bottom: 10px; /* 60px  */
   padding-right: 4em;
-  font-size: 0.9em;
+  font-size: 0.5em;
 }
 .remark-code-line-highlighted {
   background-color: var(--code-highlight-color);

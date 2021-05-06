@@ -7,7 +7,7 @@ output:
   xaringan::moon_reader:
     seal: false
     #lib_dir: libs
-    css: xaringan-themer.css
+    css: [xaringan-themer.css,  "https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css"]
     nature:
       highlightStyle: github
       highlightLines: true
@@ -40,6 +40,7 @@ library(xaringanthemer)
 ```
 
 ---
+
 background-image: url("imagenes/fondo2.PNG")
 background-size: contain;
 background-position: 100% 0%
@@ -146,10 +147,50 @@ background-position: 100% 0%
 
 # Funciones evaluadas para el SE
 
-## Aquí va una fórmula
+
+### Enfoque de la recta y del CV logarítmico
 
 
-<img src="imagenes/tres_graficos.png" width="800" />
+
+.center[<img src="imagenes/formula.png" width="500" />]
+
+
+<img src="imagenes/tres_graficos.png" width="1000" />
+
+.footnote[
+Notas:
+
+[1] La recta que pasa por los puntos: (0,01 ; 0,005) y (0,20; 0,03) quedando como CV los valores 0,50 y 0,15, respectivamente.
+
+[2]  El valor 0,1862 en la última función del máximo 𝑒𝑒 tolerable, constituye el valor que toma esta función evaluada en 𝑝=0,50, en el contexto de un muestreo aleatorio simple y considerando un tamaño muestral de 𝑛=60 unidades. Similar ejercicio se encuentra en Hornik, et al. (2002) y Walker (2003) utilizando 𝑛=41  y 𝑛=68, respectivamente.
+]
+
+
+---
+class: animated, fadeIn
+
+background-image: url("imagenes/fondo2.PNG")
+background-size: contain;
+background-position: 100% 0%
+
+# Funciones evaluadas para el SE
+
+### Enfoque de la recta y del CV logarítmico
+
+.center[<img src="imagenes/formula.png" width="500" />]
+
+
+<img src="imagenes/tres_graficos2.png" width="1000" />
+
+.footnote[
+Notas:
+
+[1] La recta que pasa por los puntos: (0,01 ; 0,005) y (0,20; 0,03) quedando como CV los valores 0,50 y 0,15, respectivamente.
+
+[2]  El valor 0,1862 en la última función del máximo 𝑒𝑒 tolerable, constituye el valor que toma esta función evaluada en 𝑝=0,50, en el contexto de un muestreo aleatorio simple y considerando un tamaño muestral de 𝑛=60 unidades. Similar ejercicio se encuentra en Hornik, et al. (2002) y Walker (2003) utilizando 𝑛=41  y 𝑛=68, respectivamente.
+]
+
+---
 
 
 
@@ -246,7 +287,9 @@ ene <- ene %>%
   mutate(fdt = if_else(cae_especifico >= 1 & cae_especifico <= 9, 1, 0), # fuerza de trabajo
          ocupado = if_else(cae_especifico >= 1 & cae_especifico <= 7, 1, 0), # persona ocupada
          desocupado = if_else(cae_especifico >= 8 & cae_especifico <= 9, 1, 0), # persona desocupada
-         metro = if_else(region == 13, 1, 0)) 
+         metro = if_else(region == 13, 1, 0),
+         num = if_else(row_number() <= 1, 1, 0),
+         denom = 1) 
 
 
 ```
