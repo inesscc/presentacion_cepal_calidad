@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="" xml:lang="">
   <head>
-    <title>Capacitación paquete calidad</title>
+    <title>Presentación paquete calidad</title>
     <meta charset="utf-8" />
     <meta name="author" content="" />
-    <meta name="date" content="2021-05-06" />
+    <meta name="date" content="2021-05-07" />
     <script src="calidad_files/kePrint-0.0.1/kePrint.js"></script>
     <link href="calidad_files/lightable-0.0.1/lightable.css" rel="stylesheet" />
     <link rel="stylesheet" href="xaringan-themer.css" type="text/css" />
@@ -34,7 +34,6 @@ class: center, middle
 
 
 ---
-
 background-image: url("imagenes/fondo2.PNG")
 background-size: contain;
 background-position: 100% 0%
@@ -50,6 +49,13 @@ background-position: 100% 0%
 --
 
 - Paquete de R para implementar el Estándar
+
+---
+
+class: inverse, center, middle
+
+# I. Contexto
+
 
 ---
 
@@ -88,11 +94,15 @@ background-position: 100% 0%
 
 - Medida predilecta para medir la calidad: El error cuadrático medio
 
-$$ECM(\hat{\theta}) = E[\hat{\theta} - \theta]^2 = \sigma^2( \hat{\theta}) + (E[\hat{\theta}] - \theta)^2 $$
+&lt;br&gt;
 
+$$ECM(\hat{\theta}) = E[\hat{\theta} - \theta]^2 = \sigma^2( \hat{\theta}) + (E[\hat{\theta}] - \theta)^2 $$
+.center[
 `\(\sigma^2( \hat{\theta}) : \text{Varianza de la estimación}\)`
 
 `\(E[\hat{\theta}] - \theta: \text{sesgo}\)`
+
+]
 
 ---
 background-image: url("imagenes/fondo2.PNG")
@@ -108,11 +118,20 @@ background-position: 100% 0%
 
 ---
 
+class: inverse, center, middle
+
+# II.Estándar de calidad en encuestas de hogares
+
+
+---
+
 background-image: url("imagenes/fondo2.PNG")
 background-size: contain;
 background-position: 100% 0%
 
 # Actividades desarrolladas
+
+&lt;br&gt;
 
 .center[
 &lt;img src="imagenes/flecha.png" width="800" /&gt;
@@ -185,6 +204,292 @@ Notas:
 ]
 
 ---
+
+background-image: url("imagenes/fondo2.PNG")
+background-size: contain;
+background-position: 100% 0%
+
+# Funciones evaluadas para el SE
+
+### Funciones evaluadas adicionalmente
+
+.center[&lt;img src="imagenes/funciones_evaluadas1.png" width="900" /&gt;]
+
+
+---
+
+background-image: url("imagenes/fondo2.PNG")
+background-size: contain;
+background-position: 100% 0%
+
+# Funciones evaluadas para el SE
+
+### Funciones evaluadas adicionalmente
+
+.center[&lt;img src="imagenes/funciones_evaluadas2.png" width="900" /&gt;]
+
+---
+
+background-image: url("imagenes/fondo2.PNG")
+background-size: contain;
+background-position: 100% 0%
+
+# Consideraciones aplicadas
+
+- **Cuadro estadístico**, arreglos ordenados de los datos procesados para facilitar la lectura e interpretación
+
+- **Tabulado**, expresión gráfica que sintetiza un valor o estimación producto del cruce de variables
+
+&lt;br&gt;
+
+.center[
+&lt;img src="imagenes/tabla1.png" width="900" /&gt;
+]
+
+
+---
+
+background-image: url("imagenes/fondo2.PNG")
+background-size: contain;
+background-position: 100% 0%
+
+# Consideraciones aplicadas
+
+- **Cuadro estadístico**, arreglos ordenados de los datos procesados para facilitar la lectura e interpretación
+
+- **Tabulado**, expresión gráfica que sintetiza un valor o estimación producto del cruce de variables
+
+&lt;br&gt;
+
+.center[
+&lt;img src="imagenes/tabla2.png" width="900" /&gt;
+]
+
+
+---
+
+background-image: url("imagenes/fondo2.PNG")
+background-size: contain;
+background-position: 100% 0%
+
+# Consideraciones aplicadas
+
+- **Cuadro estadístico**, arreglos ordenados de los datos procesados para facilitar la lectura e interpretación
+
+- **Tabulado**, expresión gráfica que sintetiza un valor o estimación producto del cruce de variables
+
+&lt;br&gt;
+
+.center[
+&lt;img src="imagenes/tabla3.png" width="900" /&gt;
+]
+
+
+---
+
+background-image: url("imagenes/fondo2.PNG")
+background-size: contain;
+background-position: 100% 0%
+
+# Consideraciones aplicadas
+
+- **Cuadro estadístico**, arreglos ordenados de los datos procesados para facilitar la lectura e interpretación
+
+- **Tabulado**, expresión gráfica que sintetiza un valor o estimación producto del cruce de variables
+
+&lt;br&gt;
+
+.center[
+&lt;img src="imagenes/tabla4.png" width="900" /&gt;
+]
+
+
+---
+background-image: url("imagenes/fondo2.PNG")
+background-size: contain;
+background-position: 100% 0%
+
+# Consideraciones aplicadas
+
+- **Estimador**, es un estadístico (es decir, una función de la muestra) usado para estimar un parámetro desconocido de la población.
+
+&lt;br&gt;
+
+.center[
+&lt;img src="imagenes/consideraciones.png" width="900" /&gt;
+]
+
+---
+
+background-image: url("imagenes/fondo2.PNG")
+background-size: contain;
+background-position: 100% 0%
+
+# Consideraciones aplicadas
+
+- **Tamaño muestral (tm)**, unidades de análisis que nutren las estimaciones y abarca: viviendas, hogares y/o personas.
+
+- **Grados de libertad (gl)** 
+
+
+.center[
+&lt;img src="imagenes/grados_libertad.png" width="800" /&gt;
+]
+
+
+- **Proporción y razones entre 0 y 1**, el cálculo de los 𝑑𝑓 y 𝑡𝑚 se realiza  sobre las unidades de análisis en la subpoblación que participan en el “Denominador”.
+
+- **Resto**, el cálculo se realiza tomando en cuenta las unidades de análisis que participan en la estimación. 
+
+
+---
+background-image: url("imagenes/fondo2.PNG")
+background-size: contain;
+background-position: 100% 0%
+
+# Estándar de calidad encuestas de hogares
+
+### I Etapa de aplicación de estándar
+
+Flujograma para evaluación de calidad de las estimaciones
+
+
+.center[
+&lt;img src="imagenes/flujo1.png" width="1000" /&gt;
+]
+
+---
+
+background-image: url("imagenes/fondo2.PNG")
+background-size: contain;
+background-position: 100% 0%
+
+# Estándar de calidad encuestas de hogares
+
+### I Etapa de aplicación de estándar
+
+Flujograma para evaluación de calidad de las estimaciones
+
+
+.center[
+&lt;img src="imagenes/flujo2.png" width="1000" /&gt;
+]
+
+
+---
+
+background-image: url("imagenes/fondo2.PNG")
+background-size: contain;
+background-position: 100% 0%
+
+# Estándar de calidad encuestas de hogares
+
+### I Etapa de aplicación de estándar
+
+Flujograma para evaluación de calidad de las estimaciones
+
+
+.center[
+&lt;img src="imagenes/flujo3.png" width="1000" /&gt;
+]
+
+---
+background-image: url("imagenes/fondo2.PNG")
+background-size: contain;
+background-position: 100% 0%
+
+# Estándar de calidad encuestas de hogares
+
+### I Etapa de aplicación de estándar
+
+Flujograma para evaluación de calidad de las estimaciones
+
+
+.center[
+&lt;img src="imagenes/flujo4.png" width="1000" /&gt;
+]
+
+
+---
+
+background-image: url("imagenes/fondo2.PNG")
+background-size: contain;
+background-position: 100% 0%
+
+# Estándar de calidad encuestas de hogares
+
+### I Etapa de aplicación de estándar
+
+Flujograma para evaluación de calidad de las estimaciones
+
+
+.center[
+&lt;img src="imagenes/flujo5.png" width="1000" /&gt;
+]
+
+---
+background-image: url("imagenes/fondo2.PNG")
+background-size: contain;
+background-position: 100% 0%
+
+# Estándar de calidad encuestas de hogares
+
+### I Etapa de aplicación de estándar
+
+Flujograma para evaluación de calidad de las estimaciones
+
+
+.center[
+&lt;img src="imagenes/flujo6.png" width="1000" /&gt;
+]
+
+---
+
+background-image: url("imagenes/fondo2.PNG")
+background-size: contain;
+background-position: 100% 0%
+
+# Estándar de calidad encuestas de hogares
+
+### I Etapa de aplicación de estándar
+
+Flujograma para evaluación de calidad de las estimaciones
+
+
+.center[
+&lt;img src="imagenes/flujo7.png" width="1000" /&gt;
+]
+
+
+
+---
+
+background-image: url("imagenes/fondo2.PNG")
+background-size: contain;
+background-position: 100% 0%
+
+# Estándar de calidad encuestas de hogares
+
+### II Etapa de aplicación de estándar
+
+Flujograma para evaluación de calidad de los tabulados
+
+.center[
+&lt;img src="imagenes/flujograma.png" width="800" /&gt;
+]
+
+
+---
+class: inverse, center, middle
+
+# ¿Consultas?
+
+
+---
+
+class: inverse, center, middle
+
+# III.Paquete de R para implementar el Estándar
 
 
 
@@ -395,7 +700,7 @@ svymean(x = ~desocupado, subset(dc_rep, fdt == 1))
 
 ```
 ##               mean     SE
-## desocupado 0.10227 0.0035
+## desocupado 0.10227 0.0031
 ```
 
 
@@ -1034,25 +1339,18 @@ Para saber si el tabulado debe ser publicado, usamos el argumento `publicar`
 ```r
 est &lt;-  create_tot(var = desocupado, dominios = region+sexo, disenio = dc)
 evaluate_tot(est, publicar = T) %&gt;% 
-  select(region, sexo, total, calidad, publicacion, aprueba) %&gt;% 
+  select(region, sexo, total, publicacion, aprueba) %&gt;% 
   slice(1:6)
 ```
 
 ```
-##   region sexo    total   calidad       publicacion
-## 1      1    1  9248.56 no fiable publicar tabulado
-## 2      2    1 21320.02    fiable publicar tabulado
-## 3      3    1 10659.94    fiable publicar tabulado
-## 4      4    1 22749.72    fiable publicar tabulado
-## 5      5    1 52432.50    fiable publicar tabulado
-## 6      6    1 28877.61    fiable publicar tabulado
-##                          aprueba
-## 1 59.38% de estimaciones fiables
-## 2 59.38% de estimaciones fiables
-## 3 59.38% de estimaciones fiables
-## 4 59.38% de estimaciones fiables
-## 5 59.38% de estimaciones fiables
-## 6 59.38% de estimaciones fiables
+##   region sexo    total       publicacion                        aprueba
+## 1      1    1  9248.56 publicar tabulado 59.38% de estimaciones fiables
+## 2      2    1 21320.02 publicar tabulado 59.38% de estimaciones fiables
+## 3      3    1 10659.94 publicar tabulado 59.38% de estimaciones fiables
+## 4      4    1 22749.72 publicar tabulado 59.38% de estimaciones fiables
+## 5      5    1 52432.50 publicar tabulado 59.38% de estimaciones fiables
+## 6      6    1 28877.61 publicar tabulado 59.38% de estimaciones fiables
 ```
 
 --
@@ -1250,9 +1548,11 @@ class: center, middle
 
 &lt;img src="imagenes/logo_portada2.png" width="200" /&gt;
 
-## Capacitación en uso paquete calidad
+## Presentación paquete calidad
 
 ## Proyecto Estratégico Servicios Compartidos para la Producción Estadística
+
+## Subdepartamento de Marcos y Muestras
 
 ### Mayo 2021
     </textarea>
@@ -1261,7 +1561,8 @@ class: center, middle
 <script>var slideshow = remark.create({
 "highlightStyle": "github",
 "highlightLines": true,
-"countIncrementalSlides": false
+"countIncrementalSlides": false,
+"ratio": "13:9"
 });
 if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
   window.dispatchEvent(new Event('resize'));

@@ -52,7 +52,7 @@
   --text-bold-color: black;
   --code-highlight-color: rgba(255,255,0,0.5);
   --inverse-text-color: #000000;
-  --inverse-background-color: blue;
+  --inverse-background-color: rgb(19, 55, 124);
   --inverse-header-color: #FFFFFF;
   --title-slide-background-color: #1381B0;
   --title-slide-text-color: #000000;
@@ -91,7 +91,7 @@ h2, h3 {
 .remark-slide-content {
   background-color: var(--background-color);
   font-size: 1rem;
-  padding: 16px 64px 16px 64px;
+  padding: 16px 10px 16px 10px; /* 16px 64px 16px 64px */
   width: 100%;
   height: 100%;
 }
@@ -205,10 +205,10 @@ table.dataTable tbody {
   color: var(--text-color);
 }
 table.dataTable.display tbody tr.odd {
-  background-color: var(--background-color);
+  background-color: var(--background-color) ;
 }
 table.dataTable.display tbody tr.even {
-  background-color: #FFEAD1;
+  background-color: #FFEAD1 ;
 }
 table.dataTable.hover tbody tr:hover, table.dataTable.display tbody tr:hover {
   background-color: rgba(255, 255, 255, 0.5);
@@ -321,6 +321,8 @@ table,  td {
   background-color: white;
   padding: 1px;
 }
+
+
 
 
 /*
