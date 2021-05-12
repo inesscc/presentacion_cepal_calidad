@@ -4,7 +4,7 @@
     <title>Presentación paquete calidad</title>
     <meta charset="utf-8" />
     <meta name="author" content="" />
-    <meta name="date" content="2021-05-07" />
+    <meta name="date" content="2021-05-11" />
     <script src="calidad_files/kePrint-0.0.1/kePrint.js"></script>
     <link href="calidad_files/lightable-0.0.1/lightable.css" rel="stylesheet" />
     <link rel="stylesheet" href="xaringan-themer.css" type="text/css" />
@@ -678,40 +678,6 @@ background-position: 100% 0%
 
 # Brevísima revisión de survey
 
-Si queremos utilizar métodos de remuestreo, podemos usar `as.svrepdesign`
-
-Con `as.svrepdesign` podemos convertir un diseño "normal" en uno con remuestreo  
-
---
-
-
-```r
-dc_rep &lt;- as.svrepdesign(design = dc, type = "subbootstrap", replicates = 10)
-```
-
---
-
-Y calcular, por ejemplo, el error estándar mediante remuestreo
-
-
-```r
-svymean(x = ~desocupado, subset(dc_rep, fdt == 1))
-```
-
-```
-##               mean     SE
-## desocupado 0.10227 0.0031
-```
-
-
-
----
-background-image: url("imagenes/fondo2.PNG")
-background-size: contain;
-background-position: 100% 0%
-
-# Brevísima revisión de survey
-
 `survey` permite hacer una infinidad de cálculos 
 
 - `svymean`
@@ -1218,7 +1184,7 @@ background-position: 100% 0%
 
 # Evaluación del estándar
 
-Evaluemos de la media de edad por sexo, cumple con el estándar
+Evaluemos si la media de edad por sexo, cumple con el estándar
 
 --
 
@@ -1523,7 +1489,7 @@ En este [repositorio de github](https://github.com/inesscc/calidad) pueden propo
 
 --
 
-Ricardo Pizarro y yo seremos los mantenedores 
+Klaus Lehmann y Ricardo Pizarro serán los mantenedores 
 
 --
 

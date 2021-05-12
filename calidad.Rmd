@@ -685,34 +685,6 @@ background-position: 100% 0%
 
 # Brevísima revisión de survey
 
-Si queremos utilizar métodos de remuestreo, podemos usar `as.svrepdesign`
-
-Con `as.svrepdesign` podemos convertir un diseño "normal" en uno con remuestreo  
-
---
-
-```{r}
-dc_rep <- as.svrepdesign(design = dc, type = "subbootstrap", replicates = 10)
-```
-
---
-
-Y calcular, por ejemplo, el error estándar mediante remuestreo
-
-```{r}
-svymean(x = ~desocupado, subset(dc_rep, fdt == 1))
-
-```
-
-
-
----
-background-image: url("imagenes/fondo2.PNG")
-background-size: contain;
-background-position: 100% 0%
-
-# Brevísima revisión de survey
-
 `survey` permite hacer una infinidad de cálculos 
 
 - `svymean`
@@ -1146,7 +1118,7 @@ background-position: 100% 0%
 
 # Evaluación del estándar
 
-Evaluemos de la media de edad por sexo, cumple con el estándar
+Evaluemos si la media de edad por sexo, cumple con el estándar
 
 --
 
@@ -1332,7 +1304,7 @@ En este [repositorio de github](https://github.com/inesscc/calidad) pueden propo
 
 --
 
-Ricardo Pizarro y yo seremos los mantenedores 
+Klaus Lehmann y Ricardo Pizarro serán los mantenedores 
 
 --
 
