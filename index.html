@@ -4,7 +4,7 @@
     <title>Presentación paquete calidad</title>
     <meta charset="utf-8" />
     <meta name="author" content="" />
-    <meta name="date" content="2021-05-11" />
+    <meta name="date" content="2021-05-14" />
     <script src="calidad_files/kePrint-0.0.1/kePrint.js"></script>
     <link href="calidad_files/lightable-0.0.1/lightable.css" rel="stylesheet" />
     <link rel="stylesheet" href="xaringan-themer.css" type="text/css" />
@@ -42,11 +42,7 @@ background-position: 100% 0%
 
 - Contexto 
 
---
-
 - Estándar de calidad en encuestas de hogares
-
---
 
 - Paquete de R para implementar el Estándar
 
@@ -67,12 +63,15 @@ background-position: 100% 0%
 
 - Las encuestas por muestreo como fuente de información
 
+--
 
 - Principio de representatividad de las encuestas por muestreo
 
+--
 
 - Criterios previos para evaluar la calidad de las estimaciones
 
+--
 
 - Disposición de las bases de datos asociadas a las encuestas por muestreo
 
@@ -88,9 +87,15 @@ background-position: 100% 0%
 
 - Calidad como concepto multidimensional
 
+--
+
 - Criterio de Acuracidad, Confiabilidad o Precisión
 
+--
+
 - Fuentes de error de las encuestas: Errores de muestreo y Errores ajenos al muestreo
+
+--
 
 - Medida predilecta para medir la calidad: El error cuadrático medio
 
@@ -134,7 +139,7 @@ background-position: 100% 0%
 &lt;br&gt;
 
 .center[
-&lt;img src="imagenes/flecha.png" width="800" /&gt;
+&lt;img src="imagenes/flecha.png" width="1000" /&gt;
 
 ]
 
@@ -337,7 +342,7 @@ background-position: 100% 0%
 ]
 
 
-- **Proporción y razones entre 0 y 1**, el cálculo de los 𝑑𝑓 y 𝑡𝑚 se realiza  sobre las unidades de análisis en la subpoblación que participan en el “Denominador”.
+- **Proporción y razones definidas entre 0 y 1**, el cálculo de los 𝑑𝑓 y 𝑡𝑚 se realiza  sobre las unidades de análisis en la subpoblación que participan en el “Denominador”.
 
 - **Resto**, el cálculo se realiza tomando en cuenta las unidades de análisis que participan en la estimación. 
 
@@ -534,6 +539,26 @@ Una posibilidad es el uso de un **paquete (librería)**
 --
 
 El paquete `calidad` implementa el estándar mediante `R`
+
+--
+
+### ¿Por qué `R`?
+
+--
+
+- El INE está avanzando decididamente en la incorporación de `R` a sus procesos    
+
+--
+
+- Es una herramienta gratuita
+
+--
+
+- Permite empaquetar soluciones de manera sencilla
+
+--
+
+- Rápida absorción de los avances estadísticos (SAE, detección de outliers, imputación, etc)
 
 --
 
