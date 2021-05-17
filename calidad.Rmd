@@ -525,7 +525,7 @@ Existen múltiples herramientas (Stata, R, SAS, Python) y todas son válidas
 
 --
 
-Múltiples modalidades dentro de cada herramienta (libertad total, scripts estandarizados, funciones, etc)
+Múltiples modalidades dentro de cada herramienta (libertad total, scripts estandarizados, funciones, etc.)
 
 --
 
@@ -565,7 +565,7 @@ El paquete `calidad` implementa el estándar mediante `R`
 
 --
 
-- Rápida absorción de los avances estadísticos (SAE, detección de outliers, imputación, etc)
+- Rápida absorción de los avances estadísticos (SAE, detección de outliers, imputación, etc.)
 
 --
 
@@ -609,7 +609,7 @@ background-position: 100% 0%
 
 # Brevísima revisión de survey
 
-Usaremos los datos del trimestre NDE-2020 de la ENE
+Usaremos los datos del trimestre [NDE-2020 de la ENE](https://www.ine.cl/docs/default-source/ocupacion-y-desocupacion/bbdd/2020/formato-csv/ene-2020-12-nde.csv?sfvrsn=eaa5e872_4&download=true) 
 
 
 ```{r}
@@ -842,7 +842,7 @@ background-position: 100% 0%
 
 # Panorama general
 
-A diferencia de `survey`, en el paquete `calidad` no es necesario utilizar ~  
+A diferencia de `survey`, en el paquete `calidad` no es necesario utilizar "~"  
 
 ```{r, eval=F}
 # Argumentos con paquete survey
@@ -939,7 +939,7 @@ background-position: 100% 0%
 
 Queremos calcular el número de ocupad**os** respecto al número de ocupad**as**
 
-$$  \frac{SumaOcupadosHombre}{SumaOcupadosMujer}$$
+$$  \frac{SumaOcupadosHombre}{SumaOcupadasMujer}$$
 --
 
 Lo primero que debemos hacer es crear variables auxiliares 
@@ -947,7 +947,7 @@ Lo primero que debemos hacer es crear variables auxiliares
 ```{r}
 ene <- ene %>% 
   mutate(ocupado_hombre = if_else(sexo == 1, ocupado, 0),
-         ocupado_mujer  = if_else(sexo == 2, ocupado, 0))
+         ocupada_mujer  = if_else(sexo == 2, ocupado, 0))
 
 
 
@@ -972,7 +972,7 @@ background-position: 100% 0%
 La función `create_prop` permite incluir el argumento `denominador`
 
 ```{r}
-create_prop(var = ocupado_hombre, denominador = ocupado_mujer, 
+create_prop(var = ocupado_hombre, denominador = ocupada_mujer, 
             subpop = fdt, disenio = dc)
 
 ```
@@ -982,7 +982,7 @@ Podemos agregar el parámetro `dominios`, si queremos desagregar
 
 
 ```{r}
-create_prop(var = ocupado_hombre, denominador = ocupado_mujer, 
+create_prop(var = ocupado_hombre, denominador = ocupada_mujer, 
             dominios = metro , subpop = fdt, disenio = dc)
 
 ```
@@ -1005,7 +1005,7 @@ create_mean(var = edad, dominios = sexo, disenio = dc)
 
 Para calcular la mediana, usamos `create_median`
 
-En este caso, el valor por defecto para el número de réplicas es 10, pero podemos elegir el valor que queramos
+En este caso, el valor por defecto para el número de réplicas es 10, pero podemos elegir el valor deseado
 
 ```{r}
 create_median(var = edad, dominios = sexo, disenio = dc, replicas = 50)
@@ -1353,7 +1353,37 @@ Si tienen propuestas de mejora o nuevos desarrollos, estaremos felices de revisa
 ### 😄😄😄😄😄
 ]
 
+---
 
+background-image: url("imagenes/fondo2.PNG")
+background-size: contain;
+background-position: 100% 0%
+
+# Desarrollo aplicativo web
+
+Este paquete busca ayudar a usuarios externos que trabajen con `R`
+
+--
+
+El lenguaje de programación sigue siendo una barrera 
+
+--
+
+.center[
+<img src="https://media.giphy.com/media/a5viI92PAF89q/giphy.gif" width="150" />
+]
+
+--
+
+.center[
+<img src="imagenes/diagrama_aplicacion.png" width="250" />
+]
+
+
+
+--
+
+### ¡Veamos la aplicación!
 
 ---
 
