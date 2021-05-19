@@ -26,7 +26,7 @@ class: center, middle
 
 ## Proyecto Estratégico Servicios Compartidos para la Producción Estadística
 
-## Subdepartamento de Marcos y Muestras
+## Subdepartamento de Diseño de Marcos y Muestras
 
 ### Mayo 2021
 
@@ -1398,6 +1398,6 @@ class: center, middle
 
 ## Proyecto Estratégico Servicios Compartidos para la Producción Estadística
 
-## Subdepartamento de Marcos y Muestras
+## Subdepartamento de Diseño de Marcos y Muestras
 
 ### Mayo 2021
