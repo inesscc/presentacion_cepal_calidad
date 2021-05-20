@@ -110,7 +110,7 @@ background-position: 100% 0%
 
 $$ECM(\hat{\theta}) = E[\hat{\theta} - \theta]^2 = \sigma^2( \hat{\theta}) + (E[\hat{\theta}] - \theta)^2 $$
 .center[
-$\sigma^2( \hat{\theta}) : \text{Varianza de la estimación}$
+$\sigma^2( \hat{\theta}) : \text{Varianza del estimador}$
 
 $E[\hat{\theta}] - \theta: \text{sesgo}$
 
@@ -755,7 +755,7 @@ background-position: 100% 0%
 
 # Instalación paquete calidad
 
-Lo primero, es descargar el paquete desde `github`
+Lo primero, es descargar el paquete desde [github](https://github.com/inesscc/calidad)
 
 Se requiere el paquete `devtools`
 
